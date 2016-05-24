@@ -14,11 +14,13 @@
 		<input type='submit'>	
 		<script>
 			sendMessage(e) {
+				console.log('Send Message')
 				let newMessage = this.createMessage(this.author.value, this.message.value)
+				this.author.value = ''
+				this.message.value = ''
 				this.stream.push(newMessage)
 			}
 			createMessage(author, message) {
-				console.log('Create Message')
 				return { author: author, sent: Date.now(), message: message }
 			}
 		</script>

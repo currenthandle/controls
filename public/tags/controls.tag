@@ -4,9 +4,9 @@
 		<span class="fa fa-music" onclick= { setQueue }>Queue</span>
 		<span class="fa fa-info-circle" onclick= { setRoom } >Room</span>
 	</ul>
-	<chat show= { state === 'chat' } onclick= { setChat }></chat>
-	<queue show= { state === 'queue' } onclick= { setQueue }></queue>
-	<room-description show= { state === 'room' } onclick= { setRoom }></room-description>
+	<chat show= { state === 'chat' }></chat>
+	<queue show= { state === 'queue' } ></queue>
+	<room-description show= { state === 'room' }></room-description>
 	<script>
 		this.state='queue'
 		setChat(e) { this.state = 'chat' }
