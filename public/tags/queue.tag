@@ -1,14 +1,16 @@
 <queue>
-	<ul>
-		<li each={ queue } onclick={ play }>
-			<span>{ title }</span>
-			<span>{ artist }</span>
-			<span>{ stringifyTime(length) }</span>
-			<script>
-			</script>
-		</li>
-			
-	</ul>
+	<div>
+		<ul>
+			<li each={ queue } onclick={ play }>
+				<span>{ title }</span>
+				<span>{ artist }</span>
+				<span>{ stringifyTime(length) }</span>
+				<div class='time-before'></div>
+				<div class='time-after'></div>
+			</li>
+				
+		</ul>
+	</div>
 	<script>
 		this.queue = [
 			{ title: 'Are You That Somebody (Album Version)', artist: 'Aaliyah', length: 268 },
@@ -35,7 +37,13 @@
 	<style scoped>
 		:scope {}
 		.playing {
+			color: orange;
+		}
+		.playing > .time-before {
 			background-color: green;
+		}
+		.playing > .time-after {
+			background-color: red;
 		}
 	</style>
 
