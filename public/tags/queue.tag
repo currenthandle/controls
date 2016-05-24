@@ -41,9 +41,15 @@
 		}
 		.playing > .time-before {
 			background-color: green;
+			display: inline-block;
+			height: 100%;
+			float: left;
 		}
 		.playing > .time-after {
 			background-color: red;
+			display: inline-block;
+			height: 100%;
+			float: right;
 		}
 	</style>
 
