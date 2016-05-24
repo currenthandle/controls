@@ -26,7 +26,7 @@
 
 	<script>
 		this.stream = [
-			{ author: 'Dan', sent: '5/19', message: 'What does everyone think of the new Turntable?' },
+			{ author: 'Dan', sent: '5/19', message: 'What does everyone think' },
 			{ author: 'Steve', sent: '5/19', message: 'I\'m diggin it' },
 			{ author: 'Chris', sent: '5/20', message: 'I like this soing' },
 			{ author: 'Dan', sent: '5/21', message: 'Another message' },
