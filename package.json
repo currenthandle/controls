@@ -5,14 +5,16 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-		"bundle": "browserify browser/main.js > public/bundle.js",
-		"watch": "watchify browser/main.js -o public/bundle.js -dv",
-		"go": "parallelshell 'npm run css-w' 'npm run watch' 'nodemon server.js'"
-				
+    "bundle": "browserify browser/main.js > public/bundle.js",
+    "watch": "watchify browser/main.js -o public/bundle.js -dv",
+    "go": "parallelshell 'npm run css-w' 'npm run watch' 'nodemon server.js'"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "browserify": "^13.0.1"
+  },
+  "dependencies": {
+    "ecstatic": "^1.4.1"
   }
 }
