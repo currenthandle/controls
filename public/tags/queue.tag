@@ -38,18 +38,29 @@
 		:scope {}
 		.playing {
 			color: orange;
+			display: block;
 		}
 		.playing > .time-before {
-			background-color: green;
+			background-color: rgba(0, 255, 0, 0.5);
 			display: inline-block;
+			position: relative;
+			left: 0;
+			right: 50%;
+			top: 0;
+			bottom: 0;
 			height: 100%;
-			float: left;
+			border: 1px solid black;
 		}
 		.playing > .time-after {
-			background-color: red;
+			background-color: rgba(255, 0, 0, 0.5);
 			display: inline-block;
+			position: relative;
+			left: 50%;
+			right: 0;
+			top: 0;
+			bottom: 0;
 			height: 100%;
-			float: right;
+			border: 1px solid black;
 		}
 	</style>
 
