@@ -5,8 +5,8 @@
 				<span>{ title }</span>
 				<span>{ artist }</span>
 				<span>{ stringifyTime(length) }</span>
-				<div class='time-before'></div>
-				<div class='time-after'></div>
+				<div class='time-before'>&nbsp;</div>
+				<div class='time-after'>&nbsp;</div>
 			</li>
 				
 		</ul>
@@ -36,31 +36,38 @@
 	</script>
 	<style scoped>
 		:scope {}
+		li {
+			position: relative;
+			display: block;
+			text-align: left;
+			font-size: 1.2rem;
+		}
+		span{
+			margin-right: .5rem;
+		}
 		.playing {
 			color: orange;
-			display: block;
+		}
+		.time-before , .time-after {
+			display: inline-block;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+		}
+		.time-before {
+			left: 0;
+			right: 50%;
+		}
+		.time-after{
+			left: 50%;
+			right: 0;
 		}
 		.playing > .time-before {
 			background-color: rgba(0, 255, 0, 0.5);
-			display: inline-block;
-			position: relative;
-			left: 0;
-			right: 50%;
-			top: 0;
-			bottom: 0;
-			height: 100%;
-			border: 1px solid black;
 		}
 		.playing > .time-after {
 			background-color: rgba(255, 0, 0, 0.5);
-			display: inline-block;
-			position: relative;
-			left: 50%;
-			right: 0;
-			top: 0;
-			bottom: 0;
-			height: 100%;
-			border: 1px solid black;
 		}
 	</style>
 
