@@ -57,6 +57,7 @@
 		}
 		play(e) {
 			let previouslyPlaying = document.getElementsByClassName("playing")[0]
+			console.log('click')
 			if(previouslyPlaying) {
 				previouslyPlaying.classList.remove('playing') 
 			}

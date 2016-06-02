@@ -1,12 +1,32 @@
 <queue>
 	<div>
 		<ul>
-			<li each={ queue } onclick={ play }>
-				<span>{ title }</span>
-				<span>{ artist }</span>
-				<span>{ stringifyTime(length) }</span>
+			<li each={ item in this.queue } onclick={ playOne }>
+				<span>{ item.title }</span>
+				<span>{ item.artist }</span>
+				<span>{ stringifyTime(item.length) }</span>
 				<div class='time-before'>&nbsp;</div>
 				<div class='time-after'>&nbsp;</div>
+				<script>
+					
+					playOne(e) {
+						let element = e.currentTarget
+						let updateInterval = 500 //miliseconds
+						this.percentPlayed = 0
+						let stepsPlayed = 0
+						let stepsTot = length * (1000/updateInterval)
+						
+						let statusBarProgressor = window.setInterval(moveStatusBar, updateInterval)
+						function moveStatusBar(){
+							stepsPlayed++	
+							this.percentPlayed = (stepsPlayed / stepsTot) * 100
+							let timeBefore = element.getElementsByClassName('time-before')[0]
+							let timeAfter = element.getElementsByClassName('time-after')[0]
+							timeBefore.style.right = percentPlayed + '%'
+							timeAfter.style.left = (100 - percentPlayed) + '%'
+						}
+					}
+				</script>
 			</li>
 				
 		</ul>
@@ -26,6 +46,7 @@
 				previouslyPlaying.classList.remove('playing') 
 			}
 			e.currentTarget.classList.add("playing");
+			console.log('play:',this)
 		}
 		stringifyTime(seconds) {
 			let secondsRemaining = seconds % 60 
@@ -33,6 +54,7 @@
 			if (secondsRemaining < 10) { secondsRemaining = '0' + secondsRemaining }
 			return minutes + ':' + secondsRemaining 
 		}
+		this.finished = 0
 	</script>
 	<style scoped>
 		:scope {}
@@ -57,10 +79,8 @@
 		}
 		.time-before {
 			left: 0;
-			right: 50%;
 		}
 		.time-after{
-			left: 50%;
 			right: 0;
 		}
 		.playing > .time-before {

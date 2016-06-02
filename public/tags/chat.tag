@@ -35,4 +35,10 @@
 		]
 		
 	</script>
+	<style scoped>
+		:scope {}
+		li {
+			text-align: left;
+		}
+	</style>
 </chat>
